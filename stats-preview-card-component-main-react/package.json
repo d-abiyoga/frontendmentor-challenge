@@ -1,0 +1,8 @@
+{
+  "name": "stats-preview-card-component-main-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react-scripts": "^4.0.3"
+  }
+}
