@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+
+:root {
+    --color-white: hsl(0, 0%, 100%);
+    --color-white-main: hsl(0, 0%, 100%, 0.75);
+    --color-statheading: hsl(0, 0%, 100%, 0.6);
+
+    --color-main-bg: hsl(233, 47%, 7%);
+    --color-card-bg: hsl(244, 38%, 16%);
+    --color-accent: hsl(277, 64%, 61%);
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 0.9375rem; /* 15px*/
+    font-family: "Inter", sans-serif;
+}
+
+.main {
+    background-color: var(--color-main-bg);
+    /* background-color: lightskyblue; */
+    color: var(--color-white-main);
+
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--color-card-bg);
+    border-radius: 0.5rem;
+    
+    width: 80%;
+    max-width: 69.375rem;
+    min-height: 27.875rem;
+    
+    display: flex;
+}
+
+#first-column {
+    padding: 5rem 10.75% 4rem 6.75%;
+    max-width: 35rem;
+    width: 50%;
+    min-width: 15rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card__heading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--color-white);
+}
+
+.card__article {
+    color: var(--color-white-main);
+    line-height: 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+.card__heading--accent {
+    color: var(--color-accent);
+}
+
+.stats__list {
+    list-style: none;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 10%;
+}
+
+.stats__list-item {
+    color: var(--color-statheading);
+}
+
+.stats__number {
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.card__img-wrapper {
+    overflow: hidden;
+    max-width: 33.75rem; /* 540px*/
+    
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-accent);
+    background-image: url(./images/image-header-desktop.jpg);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0 10px 10px 0;
+}
+
+.stats__unit {
+    font-family: "Lexend Deca", sans-serif;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (max-width: 1000px) {
+  :root {
+    font-size: 13px;
+  }
+
+  #first-column {
+    width: 60%;
+  }
+
+  .attribution a {
+    color: red;
+  }
+}
