@@ -4,7 +4,7 @@ import Stats from './Stats'
 const Card = () => {
     return (
         <div className="card">
-            <div id="first-column">
+            <div className="card__main">
                 <section>
                     <h1 className="card__heading">Get <span className="card__heading--accent">insights</span> that help your business grow.</h1>
                     <p className="card__article">
