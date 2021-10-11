@@ -2,7 +2,9 @@ import { useState } from 'react'
 import logo from './images/logo.svg'
 import './App.css'
 import Attribution from './components/Attribution'
-import Card from './components/Card'
+import Form from './components/Form'
+
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,7 +13,7 @@ function App() {
     <div className="App">  
       <main>
         <img className="logo" src={logo}/>
-        <Card />
+        <Form />
       </main>
       <Attribution />
 

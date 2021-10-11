@@ -14,6 +14,8 @@
   --light-grayish-cyan: hsl(185, 41%, 84%);
   --light-grayish-cyan-2: hsl(189, 41%, 97%);
   --white: hsl(0, 0%, 100%);
+
+  --desktop-break: 1000px;
 }
 
 body {
@@ -35,7 +37,7 @@ main {
   margin-bottom: 3rem;
 }
 
-.card {
+.container {
   background-color: white;
   padding: 2.5rem 1.5rem 2rem;
   border-radius: 1.25rem;
@@ -43,12 +45,10 @@ main {
 }
 
 .card__form {
-  padding-left: 0.5rem;
-  /* padding-right: 0.5rem; */
+  padding: 0 0.5rem;
 }
 
-
-.form-wrapper {
+.form-inputs {
   margin-bottom: 2rem;
   position: relative;
 }
@@ -71,10 +71,18 @@ main {
   border-radius: 0.5rem;
   color: var(--very-dark-cyan);
   height: 3rem;
+  width: 100%;
+  
   font-family: inherit;
   font-size: 24px;
+  font-weight: 700;
+
   padding-right: 1.125rem;
   text-align: right;
+}
+
+.card__number-input:focus {
+  outline-color: var(--strong-cyan);
 }
 
 .card__number-input::before {
@@ -93,7 +101,8 @@ main {
 .radio {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  justify-content: space-between;
+  /* gap: 1rem; */
   height: 11rem;
 }
 
@@ -106,11 +115,10 @@ main {
   color: white;
   font-weight: 700;
 
-  /* padding: 0.5rem; */
   border-radius: 0.5rem;
 
   cursor: pointer;
-  width: 40%;
+  width: 45%;
   min-width: 9.25rem;
   height: 3rem;
 
@@ -133,7 +141,14 @@ main {
   color: var(--very-dark-cyan);
   font-size: 24px;
   font-family: inherit;
+}
 
+.card__custom-tip:active {
+  border-color: var(--strong-cyan);
+}
+
+.card__custom-tip:focus {
+  border-color: var(--strong-cyan);
 }
 
 /* .card__tip-option:last-of-type {
@@ -186,4 +201,14 @@ main {
   font-family: inherit;
   font-weight: 700;
   font-size: 1.25rem;
+
+  cursor: pointer;
+}
+
+.btn-reset:active {
+  /* background-color: var(--light-grayish-cyan) */
+}
+
+@media only screen and (min-width: var(--desktop-break)) {
+  
 }
