@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import dollarIcon from '../images/icon-dollar.svg'
 import personIcon from '../images/icon-person.svg'
 import FormError from './FormError';
-import { useState, useEffect, setState } from 'react';
 
 function Form() {
-    const tipPercentage = [5, 10, 15, 20, 50]
     const [validPeopleNumber, setValidPeopleNumber] = useState(true);
     const [bill, setBill] = useState("");
     const [people, setPeople] = useState(""); 
     const [tip, setTip] = useState(0); 
     const [billError, setBillError] = useState(""); 
-    const [peopleError, setPeopleError] = useState(""); 
+    const [peopleError, setPeopleError] = useState("");
+    
+    // Variables
+    const tipPercentage = [5, 10, 15, 20, 50]
+
+    // Output
+    const [tipPerPerson, setTipPerPerson] = useState(0);
+    const [totalPerPerson, setTotalPerPerson] = useState(0);
 
     const handleBillValue = (e) => {
         setBill(e.target.value)
@@ -24,7 +29,7 @@ function Form() {
             if (rb.checked) {
                 setTip(rb.value)
                 break;
-            }
+            } 
         }
     }
 
@@ -43,7 +48,7 @@ function Form() {
         setTip(e.target.value)
     }
 
-    // let isValid = true;
+    // TODO: develop form validation
     const formValidation = (e) => {
         console.log(e.target.value)
         if (e.target.value == 0) { 
@@ -56,10 +61,35 @@ function Form() {
     const handlePeopleValue = (e) => {
         setPeople(e.target.value);
     }
+    
+    const calculateOutput = useEffect(() => {
+        if (people > 0) {
+            console.log('calculating') 
+            const eachpersontip = bill * tip / 100 / people
+            if (eachpersontip >= 0) {
+                const totalcostperperson = ( bill / people ) + eachpersontip
+                setTipPerPerson(eachpersontip)
+                setTotalPerPerson(totalcostperperson)
+            } 
+        }
+    })
 
+    const resetState = () => { 
+        setBill("");
+        setPeople(""); 
+        setTip(0) 
+        setBillError("");
+        setPeopleError("");
+        setTipPerPerson(0);
+        setTotalPerPerson(0);
+
+        document.getElementById("tip-calculator-form").reset();
+    }
+
+    
     return (
         <div className="container">
-            <form className="card__form">
+            <form className="card__form" id="tip-calculator-form">
                 {/* Bill */}
                 <div className="form-inputs">
                     <legend className="form-label">Bill</legend>
@@ -73,7 +103,7 @@ function Form() {
                         >
                     </input>
                     {/* Debugging only */}
-                    <p>{bill}</p>
+                    {/* <p>{bill}</p> */}
                 </div>
                 
                 {/* Tip Percentage */}
@@ -110,7 +140,7 @@ function Form() {
                         />
 
                         {/* Debugging only */}
-                        <p>{tip}</p>
+                        {/* <p>{tip}</p> */}
                     </div>
                 </div>
 
@@ -128,7 +158,7 @@ function Form() {
                 </div>
 
                 {/* Debugging only */}
-                <p>{people}</p>
+                {/* <p>{people}</p> */}
                 { !validPeopleNumber && <FormError /> }
             </form>
 
@@ -138,7 +168,7 @@ function Form() {
                         Tip Amount <br /> <span className="tip-output__detail">/ person</span>
                     </div>
                     <div className="tip-output__calculated-output">
-                        $0.00
+                        {`$${tipPerPerson.toFixed(2)}`}
                     </div>
                 </div>
                 <div className="tip-output__items"> 
@@ -146,13 +176,11 @@ function Form() {
                         Total <br /><span className="tip-output__detail">/ person</span>
                     </div>
                     <div className="tip-output__calculated-output">
-                        $0.00
+                        {`$${totalPerPerson.toFixed(2)}`}
                     </div>
                 </div>
-                <button className="btn-reset" type="reset">RESET</button>
+                <button className="btn-reset" type="reset" onClick={resetState}>RESET</button>
             </div>
-
-
         </div>
     )
 }
