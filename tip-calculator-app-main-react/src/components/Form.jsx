@@ -1,36 +1,42 @@
 import React, { useState, useEffect } from 'react';
 import dollarIcon from '../images/icon-dollar.svg'
 import personIcon from '../images/icon-person.svg'
-import FormError from './FormError';
 
 function Form() {
-    const [validPeopleNumber, setValidPeopleNumber] = useState(true);
-    const [bill, setBill] = useState("");
-    const [people, setPeople] = useState(""); 
-    const [tip, setTip] = useState(0); 
-    const [billError, setBillError] = useState(""); 
-    const [peopleError, setPeopleError] = useState("");
+    const defaultState = {
+        bill: 0,
+        people: null,
+        tip: 0,
+    }
+    const [state, setState] = useState(defaultState)
+    const [inputIsValid, setInputIsValid] = useState(true)
     
     // Variables
     const tipPercentage = [5, 10, 15, 20, 50]
 
-    // Output
+    // Outputs
     const [tipPerPerson, setTipPerPerson] = useState(0);
     const [totalPerPerson, setTotalPerPerson] = useState(0);
 
-    const handleBillValue = (e) => {
-        setBill(e.target.value)
-    }
+    // Functions
+    const handleInputChange = (e) => {
+        const inputValue = e.target.value;
+        const inputName = e.target.name;
 
-    const handleTipValue = (e) => {
-        console.log(e.target.value)
-        const radioBtns = document.querySelectorAll('input[name="tip"]')
-        for (const rb of radioBtns) {
-            if (rb.checked) {
-                setTip(rb.value)
-                break;
-            } 
+        // can be written as:
+        // const { name, value } = e.target
+
+        // Validation for number of people input
+        if (inputName == 'people' && inputValue == 0) {
+            setInputIsValid(false)
+        } else if (inputName == 'people' && inputValue !== 0) {
+            setInputIsValid(true)
         }
+
+        setState({
+            ...state,
+            [inputName]: inputValue
+        })
     }
 
     // Remove checked value if custom tip is on focus
@@ -44,30 +50,13 @@ function Form() {
         }
     }
 
-    const handleCustomTip = (e) => {
-        setTip(e.target.value)
-    }
-
-    // TODO: develop form validation
-    const formValidation = (e) => {
-        console.log(e.target.value)
-        if (e.target.value == 0) { 
-            setValidPeopleNumber(false)
-        } else if (e.target.value !== 0 & !validPeopleNumber) { 
-            setValidPeopleNumber(true) }
-        console.log('isValid', validPeopleNumber )
-    }
-
-    const handlePeopleValue = (e) => {
-        setPeople(e.target.value);
-    }
-    
     const calculateOutput = useEffect(() => {
-        if (people > 0) {
-            console.log('calculating') 
-            const eachpersontip = bill * tip / 100 / people
+        console.log(state)
+        if (state.people > 0) {
+            const eachpersontip = state.bill * state.tip / 100 / state.people
             if (eachpersontip >= 0) {
-                const totalcostperperson = ( bill / people ) + eachpersontip
+                const totalcostperperson = ( state.bill / state.people ) + eachpersontip
+
                 setTipPerPerson(eachpersontip)
                 setTotalPerPerson(totalcostperperson)
             } 
@@ -75,18 +64,11 @@ function Form() {
     })
 
     const resetState = () => { 
-        setBill("");
-        setPeople(""); 
-        setTip(0) 
-        setBillError("");
-        setPeopleError("");
-        setTipPerPerson(0);
-        setTotalPerPerson(0);
-
+        setState(defaultState)
+        setInputIsValid(true)
         document.getElementById("tip-calculator-form").reset();
     }
 
-    
     return (
         <div className="container">
             <form className="card__form" id="tip-calculator-form">
@@ -95,15 +77,16 @@ function Form() {
                     <legend className="form-label">Bill</legend>
                     <img className="card__input-unit" src={dollarIcon} />
                     <input 
-                        id="bill-amount" 
+                        id="bill-amount"
+                        name="bill" 
                         className="card__number-input" 
                         type="number" 
                         placeholder="00.0"
-                        onChange={handleBillValue}
+                        onChange={handleInputChange}
+                        required
+                        min="0"
                         >
                     </input>
-                    {/* Debugging only */}
-                    {/* <p>{bill}</p> */}
                 </div>
                 
                 {/* Tip Percentage */}
@@ -113,17 +96,17 @@ function Form() {
                         {tipPercentage.map(element => (
                             <>
                                 <input
-                                    key={'input-'+tipPercentage.indexOf(element)}
+                                    key={`input-${tipPercentage.indexOf(element)}`}
                                     className="radio__input"
                                     type="radio" 
                                     id={element} 
                                     name="tip" 
                                     value={element}
-                                    onClick={handleTipValue}
+                                    onClick={handleInputChange}
                                 />
                                 <label 
-                                    key={'label'+tipPercentage.indexOf(element)}
-                                    className="card__tip-option" 
+                                    key={`label-${tipPercentage.indexOf(element)}`}
+                                    className="card__tip-option"  
                                     htmlFor={element}
                                     >
                                     {element}%
@@ -136,47 +119,49 @@ function Form() {
                             type="text"
                             placeholder="Custom"
                             onFocus={clearSelectedTip}
-                            onChange={handleCustomTip}
+                            onChange={handleInputChange}
+                            name="tip"
+                            min="0"
+                            required
                         />
-
-                        {/* Debugging only */}
-                        {/* <p>{tip}</p> */}
                     </div>
                 </div>
 
                 {/* Number of People */}
                 <div className="form-inputs">
                     <legend className="form-label">Number of People</legend>
+                    { !inputIsValid && <div className="errorMessage">Can't be zero</div> }
                     <img className="card__input-unit" src={personIcon} />
                     <input 
                         type="number" 
-                        className="card__number-input" 
+                        name="people"
+                        className={inputIsValid ? "card__number-input" : "card__number-input card--error"}
                         placeholder="0"
-                        // onChange={formValidation}
-                        onChange={handlePeopleValue}
+                        onChange={handleInputChange}
+                        required
+                        min="0"
+                        
                     />
                 </div>
-
-                {/* Debugging only */}
-                {/* <p>{people}</p> */}
-                { !validPeopleNumber && <FormError /> }
             </form>
 
             <div className="tip-output">
-                <div className="tip-output__items">    
-                    <div className="tip-output__label">
-                        Tip Amount <br /> <span className="tip-output__detail">/ person</span>
+                <div className="tip-output__items-wrapper">
+                    <div className="tip-output__items">    
+                        <div className="tip-output__label">
+                            Tip Amount <br /> <span className="tip-output__detail">/ person</span>
+                        </div>
+                        <div className="tip-output__calculated-output">
+                            {`$${tipPerPerson.toFixed(2)}`}
+                        </div>
                     </div>
-                    <div className="tip-output__calculated-output">
-                        {`$${tipPerPerson.toFixed(2)}`}
-                    </div>
-                </div>
-                <div className="tip-output__items"> 
-                    <div className="tip-output__label">
-                        Total <br /><span className="tip-output__detail">/ person</span>
-                    </div>
-                    <div className="tip-output__calculated-output">
-                        {`$${totalPerPerson.toFixed(2)}`}
+                    <div className="tip-output__items"> 
+                        <div className="tip-output__label">
+                            Total <br /><span className="tip-output__detail">/ person</span>
+                        </div>
+                        <div className="tip-output__calculated-output">
+                            {`$${totalPerPerson.toFixed(2)}`}
+                        </div>
                     </div>
                 </div>
                 <button className="btn-reset" type="reset" onClick={resetState}>RESET</button>
