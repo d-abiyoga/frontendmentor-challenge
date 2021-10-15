@@ -5,7 +5,7 @@ import personIcon from '../images/icon-person.svg'
 function Form() {
     const defaultState = {
         bill: 0,
-        people: null,
+        people: 0,
         tip: 0,
     }
     const [state, setState] = useState(defaultState)
@@ -51,7 +51,7 @@ function Form() {
     }
 
     const calculateOutput = useEffect(() => {
-        console.log(state)
+        // console.log(state)
         if (state.people > 0) {
             const eachpersontip = state.bill * state.tip / 100 / state.people
             if (eachpersontip >= 0) {
@@ -66,6 +66,8 @@ function Form() {
     const resetState = () => { 
         setState(defaultState)
         setInputIsValid(true)
+        setTipPerPerson(0)
+        setTotalPerPerson(0)
         document.getElementById("tip-calculator-form").reset();
     }
 
