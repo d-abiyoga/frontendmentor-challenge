@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+:focus {
+  outline: solid 2px var(--strong-cyan);
+}
+
 :root {
   --strong-cyan: hsl(172, 67%, 45%);
   --very-dark-cyan: hsl(183, 100%, 15%);
@@ -96,7 +100,7 @@ main {
 }
 
 .card--error {
-  border: #d16e5b solid 3px;
+  outline: #d16e5b solid 2px;
   /* background-color: #d16e5b; */
 }
 
@@ -222,10 +226,6 @@ main {
   cursor: pointer;
 }
 
-.btn-reset:active {
-  /* background-color: var(--light-grayish-cyan) */
-}
-
 .errorMessage {
   color: #d16e5b;
   font-size: small;
@@ -288,7 +288,6 @@ main {
     width: 7.5rem;
   }
 
-
   .tip-output {
     display: flex;
     flex-direction: column;
@@ -297,13 +296,8 @@ main {
   }
 
   .tip-output__items {
-    /* height: 2.5rem; */
     margin-bottom: 3.5rem;
     align-items: center;
-  }
-
-  .tip-output__label {
-
   }
 
   .tip-output__calculated-output {
