@@ -101,7 +101,6 @@ main {
 
 .card--error {
   outline: #d16e5b solid 2px;
-  /* background-color: #d16e5b; */
 }
 
 .card--error:focus {
@@ -246,6 +245,10 @@ main {
     max-width: 58rem;
 
     padding: 2rem;
+
+    box-shadow: 11px 5px 22px -4px rgba(127,156,159,0.39);
+    -webkit-box-shadow: 11px 5px 22px -4px rgba(127,156,159,0.39);
+    -moz-box-shadow: 11px 5px 22px -4px rgba(127,156,159,0.39);
   }
 
   .container > * {
