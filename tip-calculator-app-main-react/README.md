@@ -14,7 +14,6 @@ This is a solution to the [Stats preview card component challenge on Frontend Me
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 
 ## Overview
@@ -32,7 +31,7 @@ Users should be able to:
 
 ### Links
 <!-- - Solution URL: [Add solution URL here](https://your-solution-url.com) -->
-- Live Site URL: [Live website  hosted in Netlify](https://www.youtube.com/watch?v=4CeTFW4agRw&t=2537s)
+- Live Site URL: [Live website  hosted in Netlify](https://adoring-snyder-c43987.netlify.app/)
 
 ## My process
 
