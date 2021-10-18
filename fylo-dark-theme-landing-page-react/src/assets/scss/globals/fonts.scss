@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+// ### Body Copy
+// - Font size: 14px
+:root {
+    // Headings, Call-to-actions, Header Navigation
+    --font-raleway: 'Raleway', sans-serif;   
+    
+    // Body
+    --font-open-sans: 'Open Sans', sans-serif;
+}
