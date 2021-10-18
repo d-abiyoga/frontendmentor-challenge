@@ -29,16 +29,37 @@ body {
   background-color: var(--light-grayish-cyan);
 }
 
-main {
+header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+}
+
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
 }
 
 .logo {
   align-self: center;
   margin-top: 4.5rem;
   margin-bottom: 3rem;
+  width: auto;
+  height: auto;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container {
@@ -101,10 +122,6 @@ main {
 
 .card--error {
   outline: #d16e5b solid 2px;
-<<<<<<< HEAD
-  /* background-color: #d16e5b; */
-=======
->>>>>>> tip-calculator-app
 }
 
 .card--error:focus {
@@ -225,10 +242,19 @@ main {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> tip-calculator-app
 =======
+>>>>>>> tip-calculator-app
+=======
+.btn--disabled {
+  cursor: not-allowed;
+  background-color: var(--strong-cyan);
+  opacity: 0.4;
+}
+
 >>>>>>> tip-calculator-app
 .errorMessage {
   color: #d16e5b;
@@ -242,6 +268,11 @@ main {
 }
 
 @media only screen and (min-width: 1000px) {
+  .logo {
+    margin-top: 10rem;
+    margin-bottom: 5.625rem;
+  }
+
   .container {
     display: flex;
     justify-content: space-between;
@@ -260,6 +291,7 @@ main {
     width: 48%;
     height: 26rem;
   }
+  
 
   .card__form {
     display: flex;
