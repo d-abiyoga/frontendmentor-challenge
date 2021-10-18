@@ -185,11 +185,6 @@ main {
   border-color: var(--strong-cyan);
 }
 
-/* .card__tip-option:last-of-type {
-  padding: 0;
-  background-color: ;
-} */
-
 .card__custom-tip::placeholder {
   border: none;
   color: var(--dark-grayish-cyan);
@@ -250,8 +245,6 @@ main {
   cursor: not-allowed;
   background-color: var(--strong-cyan);
   opacity: 0.4;
-
-
 }
 
 .errorMessage {
@@ -266,6 +259,11 @@ main {
 }
 
 @media only screen and (min-width: 1000px) {
+  .logo {
+    margin-top: 10rem;
+    margin-bottom: 5.625rem;
+  }
+
   .container {
     display: flex;
     justify-content: space-between;
@@ -284,6 +282,7 @@ main {
     width: 48%;
     height: 26rem;
   }
+  
 
   .card__form {
     display: flex;
