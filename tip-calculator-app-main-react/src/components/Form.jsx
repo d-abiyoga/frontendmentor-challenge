@@ -3,6 +3,7 @@ import dollarIcon from '../images/icon-dollar.svg'
 import personIcon from '../images/icon-person.svg'
 
 function Form() {
+    // === STATE ===
     const defaultState = {
         bill: 0,
         people: 0,
@@ -10,21 +11,22 @@ function Form() {
     }
     const [state, setState] = useState(defaultState)
     const [inputIsValid, setInputIsValid] = useState(true)
-    
-    // Variables
-    const tipPercentage = [5, 10, 15, 20, 50]
+    const [buttonIsDisabled, setButtonIsDisabled] = useState(true)
 
     // Outputs
     const [tipPerPerson, setTipPerPerson] = useState(0);
     const [totalPerPerson, setTotalPerPerson] = useState(0);
+    
+    // === BINDINGS ===
+    const tipPercentage = [5, 10, 15, 20, 50]
 
-    // Functions
+    // === FUNCTIONS ===
     const handleInputChange = (e) => {
         const inputValue = e.target.value;
         const inputName = e.target.name;
-
-        // can be written as:
-        // const { name, value } = e.target
+        console.log('target:', e.target)
+        console.log('inputValue:', inputValue)
+        console.log('inputName:', inputName)
 
         // Validation for number of people input
         if (inputName == 'people' && inputValue == 0) {
@@ -33,6 +35,13 @@ function Form() {
             setInputIsValid(true)
         }
 
+        // If preset tip is selected, custom tip need to be cleared
+        if (e.target.type === 'radio') {
+            const customTipEl = document.getElementsByClassName('card__custom-tip')[0];
+            customTipEl.value = ""
+        }
+
+        // Update state
         setState({
             ...state,
             [inputName]: inputValue
@@ -51,7 +60,6 @@ function Form() {
     }
 
     const calculateOutput = useEffect(() => {
-        // console.log(state)
         if (state.people > 0) {
             const eachpersontip = state.bill * state.tip / 100 / state.people
             if (eachpersontip >= 0) {
@@ -60,6 +68,14 @@ function Form() {
                 setTipPerPerson(eachpersontip)
                 setTotalPerPerson(totalcostperperson)
             } 
+        }
+    })
+
+    const updateButtonState = useEffect(() => {
+        if (totalPerPerson > 0) {
+            setButtonIsDisabled(false)
+        } else if (totalPerPerson === 0) {
+            setButtonIsDisabled(true)
         }
     })
 
@@ -77,7 +93,7 @@ function Form() {
                 {/* Bill */}
                 <div className="form-inputs">
                     <legend className="form-label">Bill</legend>
-                    <img className="card__input-unit" src={dollarIcon} />
+                    <img className="card__input-unit" src={dollarIcon} alt="dollar sign icon"/>
                     <input 
                         id="bill-amount"
                         name="bill" 
@@ -133,7 +149,7 @@ function Form() {
                 <div className="form-inputs">
                     <legend className="form-label">Number of People</legend>
                     { !inputIsValid && <div className="errorMessage">Can't be zero</div> }
-                    <img className="card__input-unit" src={personIcon} />
+                    <img className="card__input-unit" src={personIcon} alt="people bust icon"/>
                     <input 
                         type="number" 
                         name="people"
@@ -166,7 +182,12 @@ function Form() {
                         </div>
                     </div>
                 </div>
-                <button className="btn-reset" type="reset" onClick={resetState}>RESET</button>
+                <button 
+                    className={`btn-reset ${buttonIsDisabled && 'btn--disabled'}`}
+                    type="reset" 
+                    onClick={resetState}
+                    disabled={buttonIsDisabled}
+                >RESET</button>
             </div>
         </div>
     )
