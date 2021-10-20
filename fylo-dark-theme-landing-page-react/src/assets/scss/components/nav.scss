@@ -1,0 +1,29 @@
+@use "../util/" as *;
+
+.navbar {
+    background-color: var(--intro-email-bg);
+    display: flex;
+    justify-content: space-between;
+
+    padding: rem(24) rem(25) 0 rem(20);
+
+    .navbar__logo {
+        width: rem(82);
+        height: rem(25);
+    }
+
+    .navbar__items {
+        display: flex;
+        align-items: flex-end;
+
+        gap: 1rem;
+        margin: 0;
+        padding-bottom: 0.5rem;
+        list-style: none;
+    }
+
+    .navbar__link {
+        color: var(--white);
+        text-decoration: none;
+    }
+}

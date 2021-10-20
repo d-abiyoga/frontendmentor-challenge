@@ -1,0 +1,43 @@
+@use "../util/" as *;
+
+.sign-up-wrapper {
+    padding: 0 7.5vw;
+    .sign-up-card {
+        //
+        background-color: var(--testimonial-bg);
+        border-radius: rem(12);
+        padding: rem(45) rem(30) rem(36);
+        text-align: center;
+
+
+        .sign-up__title {
+            font-family: var(--font-raleway);
+            font-size: rem(18);
+            margin-bottom: rem(24);
+        }
+
+        .sign-up__copy {
+            font-size: rem(16);
+            margin-bottom: rem(35);
+        }
+
+        .sign-up__form {
+            .sign-up__input {
+                border-radius: rem(25);
+                border: none;
+                height: rem(50);
+                width: 100%;
+                padding-left: rem(30);
+                
+                margin-bottom: rem(24);
+            }
+
+            .sign-up__btn {
+                border: none;
+                border-radius: rem(25);
+                width: 100%;
+                height: rem(50);
+            }
+        }
+    }
+}

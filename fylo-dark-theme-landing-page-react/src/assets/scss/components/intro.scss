@@ -1,0 +1,32 @@
+@use '../util' as *;
+
+.intro__wrapper {
+    padding-top: rem(45);
+    color: var(--white);
+    width: 85vw;
+    align-self: center;
+    text-align: center;
+}
+
+.intro__illustration {
+    width: 80vw;
+}
+
+.intro__heading {
+    padding-top: rem(22);
+    font-family: var(--font-raleway);
+    line-height: 2.25rem;
+}
+
+.intro__description {
+    padding-top: rem(26);
+    font-size: rem(15);
+}
+
+.intro__btn {
+    margin-top: rem(30);
+    width: rem(240);
+    height: rem(48);
+    border-radius: rem(22);
+    border: none;
+} 

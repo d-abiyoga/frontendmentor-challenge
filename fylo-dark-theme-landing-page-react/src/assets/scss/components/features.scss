@@ -1,0 +1,29 @@
+@use '../util/' as *;
+
+.features-wrapper {
+    padding: rem(130) 7.5vw rem(85) 7.5vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+    
+    .features__items{
+        padding-bottom: rem(90);
+
+        .features__icon {
+            height: rem(60);
+            margin-bottom: 2rem;
+        }
+    
+        .features__title {
+            font-size: rem(17);
+            margin-bottom: rem(14);
+            font-family: var(--font-raleway);
+        }
+    
+        .features__detail {
+            font-size: rem(14);
+            line-height: 1.4rem;
+        }
+    }
+}

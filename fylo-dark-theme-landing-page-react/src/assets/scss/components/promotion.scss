@@ -1,0 +1,41 @@
+@use "../util/" as *;
+
+.promotion-wrapper {
+    width: 100vw;
+    padding: 0 7.5vw rem(180) 7.5vw;
+    // text-align: center;
+
+    .promotion__image {
+        width: 85vw;
+        align-content: center;
+    }
+
+    .promotion__title {
+        // color: blue;
+        font-family: var(--font-raleway);
+        padding-bottom: 1rem;
+        font-size: rem(17);
+    }
+
+    .promotion__copy {
+        padding-bottom: 1rem;
+        font-size: rem(14);
+        line-height: 1.5rem;
+    }
+
+    .promotion__link {
+        color: var(--cyan);
+        font-size: rem(14);
+        position: relative;
+    }
+
+    .promotion__link::after {
+        left: 0;
+        bottom: rem(-6);
+        height: 1px;
+        position: absolute;
+        width: 100%;
+        content: "";
+        background-color: var(--cyan);
+    }
+}
