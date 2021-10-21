@@ -4,15 +4,19 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "test": "react-scripts test"
   },
   "dependencies": {
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
   },
   "devDependencies": {
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.4.1",
     "@vitejs/plugin-react": "^1.0.0",
     "eslint-config-react-app": "^6.0.0",
+    "react-scripts": "^4.0.3",
     "sass": "^1.42.1",
     "vite": "^2.6.0"
   }

@@ -27,6 +27,15 @@
         color: var(--cyan);
         font-size: rem(14);
         position: relative;
+
+        span {
+            padding-right: 0.5rem;
+        }
+
+        .promotion__link-icon {
+            height:rem(14);
+            width: rem(14);
+        }
     }
 
     .promotion__link::after {
@@ -38,4 +47,20 @@
         content: "";
         background-color: var(--cyan);
     }
+
+    // Hover state
+    .promotion__link:hover {
+        color: var(--white);
+        
+        .promotion__link-icon {
+            circle {
+                fill: white;
+            }
+        }
+
+    }
+    .promotion__link:hover::after {
+        background-color: var(--white);
+    }
+    
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import promotionImage from "../assets/img/illustration-stay-productive.png";
-import iconArrow from "../assets/img/icon-arrow.svg"
+import iconArrow from "../assets/img/icon-arrow.svg";
+import ArrowIcon from "../assets/img/icon-arrow.svg?component";
 
 const Promotion = () => {
     return (
@@ -23,7 +24,8 @@ const Promotion = () => {
                 required.
             </p>
             <a className="promotion__link link" href="#">
-                See how Fylo works <img src={iconArrow} alt="" />
+                <span>See how Fylo works</span>
+                <ArrowIcon className="promotion__link-icon" />
             </a>
         </section>
     );

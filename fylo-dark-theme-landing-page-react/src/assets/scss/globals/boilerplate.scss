@@ -17,3 +17,17 @@ body {
     padding: 0;
     // font-family: var(--font-open-sans);
 }
+
+a:focus,
+button:focus,
+input:focus,
+:focus {
+  outline: none;
+}
+
+a::-moz-focus-inner,
+button::-moz-focus-inner,
+input::-moz-focus-inner,
+::-moz-focus-inner {
+  border: 0;
+}

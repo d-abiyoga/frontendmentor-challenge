@@ -30,7 +30,7 @@ const Feature = () => {
     ]);
 
     return (
-        <section className="features-wrapper">
+        <section id="features" className="features-wrapper">
             {features.map((feature) => (
                 <article className="features__items" key={features.indexOf(feature)}>
                     <img className="features__icon" src={feature.icon} alt="icon" />

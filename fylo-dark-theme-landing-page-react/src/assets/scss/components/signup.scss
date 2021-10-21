@@ -22,6 +22,8 @@
         }
 
         .sign-up__form {
+            position: relative;
+
             .sign-up__input {
                 border-radius: rem(25);
                 border: none;
@@ -29,10 +31,31 @@
                 width: 100%;
                 padding-left: rem(30);
                 
-                margin-bottom: rem(24);
+                margin-bottom: rem(6);
+                // margin-bottom: rem(6);
+            }
+
+            .sign-up__input::placeholder {
+                color: hsl(0, 0, 70%)
+            }
+
+            .sign-up__input:focus {
+                outline: solid 2px;
+                outline-color: var(--cyan);
+            }
+
+            .form-error {
+                color: var(--light-red);
+                text-align: left;
+                padding-left: 1.75rem;
+                // position: absolute;
+                // top: -0.5rem;
+                font-size: rem(12);
+                // left: 0;
             }
 
             .sign-up__btn {
+                margin-top: rem(24);
                 border: none;
                 border-radius: rem(25);
                 width: 100%;

@@ -4,3 +4,8 @@ main {
     display: flex;
     flex-direction: column;
 }
+
+footer {
+    background-color: var(--main-bg);
+    color: var(--white)
+}

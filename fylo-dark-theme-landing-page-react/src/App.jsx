@@ -7,6 +7,7 @@ import Attribution from "./components/Attribution";
 import SignUp from "./components/SignUp";
 import Promotion from "./components/Promotion";
 import Sitemap from "./components/Sitemap";
+// import SignUpFormHook from "./components/SignUpFormHook";
 
 const App = () => {
     return (
@@ -21,6 +22,7 @@ const App = () => {
                 <Promotion />
                 <Testimonial />
                 <SignUp />
+                
             </main>
             <footer>
                 <Sitemap />

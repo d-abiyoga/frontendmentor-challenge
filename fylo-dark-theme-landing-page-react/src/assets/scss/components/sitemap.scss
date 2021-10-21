@@ -1,0 +1,77 @@
+@use "../util/" as *;
+
+.sitemap-wrapper {
+    padding: rem(75) 7.5vw rem(42);
+
+    .sitemap__company-logo {
+        padding: 0 rem(16) rem(45);
+    }
+
+    .contact-info {
+        padding-bottom: rem(65);
+
+        .contact-info__item {
+            list-style: none;
+            display: flex;
+            gap: rem(42);
+            padding-bottom: rem(20);
+
+            .contact__item-icon-wrapper {
+                // width of zero and wrapper is used to keep consistent gap in contact items, since location icon width is narrower than the other two
+                width: 0;
+
+                // .contact__item-icon {
+                // width: 24px;
+                // height: 24px;
+                // }
+            }
+            .contact__detail {
+            }
+        }
+    }
+
+    .links {
+        list-style: none;
+        padding-bottom: rem(60);
+        color: white;
+
+        .links__item {
+            padding-bottom: rem(20);
+
+            .link {
+                color: var(--white);
+            }
+            .link:active {
+                color: var(--white)
+            }
+        }
+
+        .links__item:nth-of-type(4) {
+            padding-bottom: rem(50);
+        }
+    }
+
+    .social-media-icons {
+        display: flex;
+        justify-content: center;
+        align-content: space-around;
+        gap: rem(12);
+
+        .social-media-icon__link {
+            border: solid 1px var(--white);
+            border-radius: 50%;
+            height: rem(24);
+            width: rem(24);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            color: var(--white);
+        }
+
+        .social-media-icon__link > * {
+            height: 55%;
+            width: 55%;
+        }
+    }
+}
