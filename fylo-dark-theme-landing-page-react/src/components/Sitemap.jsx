@@ -73,25 +73,52 @@ const Sitemap = () => {
                     </a>
                 </li>
                 <li className="links__item">
-                    <a href="terms" className="link">
+                    <a href="/terms" className="link">
                         Terms
                     </a>
                 </li>
                 <li className="links__item">
-                    <a href="privacy" className="link">
+                    <a href="/privacy" className="link">
                         Privacy
                     </a>
                 </li>
             </ul>
             <div className="social-media-icons">
-                <a href="#" className="social-media-icon__link link">
-                    <FontAwesomeIcon icon={["fab", "facebook-f"]} />
+                <a
+                    aria-label="facebook"
+                    href="https://facebook.com"
+                    className="social-media-icon__link link"
+                    rel="noopener"
+                >
+                    <FontAwesomeIcon
+                        icon={["fab", "facebook-f"]}
+                        id="link-facebook"
+                        alt="facebook"
+                        rel="noopener"
+                    />
                 </a>
-                <a href="#" className="social-media-icon__link link">
-                    <FontAwesomeIcon icon={["fab", "twitter"]} />
+                <a
+                    aria-label="twitter"
+                    href="https://twitter.com"
+                    className="social-media-icon__link link"
+                >
+                    <FontAwesomeIcon
+                        icon={["fab", "twitter"]}
+                        id="link-twitter"
+                        alt="twitter"
+                        rel="noopener"
+                    />
                 </a>
-                <a href="#" className="social-media-icon__link link">
-                    <FontAwesomeIcon icon={["fab", "instagram"]} />
+                <a
+                    aria-label="instagram"
+                    href="https://instagram.com"
+                    className="social-media-icon__link link"
+                >
+                    <FontAwesomeIcon
+                        icon={["fab", "instagram"]}
+                        id="link-instagram"
+                        alt="instagram"
+                    />
                 </a>
             </div>
         </section>
