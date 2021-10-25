@@ -3,64 +3,97 @@
 .promotion-wrapper {
     width: 100vw;
     padding: 0 7.5vw rem(180) 7.5vw;
-    // text-align: center;
+
+    @include breakpoint(large) {
+        display: flex;
+        // align-items: center;
+        justify-content: space-between;
+        gap: 5%;
+
+        padding-left: 8.25vw;
+        padding-right: 8.25vw;
+    }
 
     .promotion__image {
         width: 85vw;
         align-content: center;
-    }
 
-    .promotion__title {
-        // color: blue;
-        font-family: var(--font-raleway);
-        padding-bottom: 1rem;
-        font-size: rem(17);
-    }
-
-    .promotion__copy {
-        padding-bottom: 1rem;
-        font-size: rem(14);
-        line-height: 1.5rem;
-    }
-
-    .promotion__link {
-        color: var(--cyan);
-        font-size: rem(14);
-        position: relative;
-
-        span {
-            padding-right: 0.5rem;
-        }
-
-        .promotion__link-icon {
-            height:rem(14);
-            width: rem(14);
+        @include breakpoint(large) {
+            width: 50%;
         }
     }
 
-    .promotion__link::after {
-        left: 0;
-        bottom: rem(-6);
-        height: 1px;
-        position: absolute;
-        width: 100%;
-        content: "";
-        background-color: var(--cyan);
-    }
+    .promotion__article {
+        font-size: rem(14);
 
-    // Hover state
-    .promotion__link:hover {
-        color: var(--white);
-        
-        .promotion__link-icon {
-            circle {
-                fill: white;
+        @include breakpoint(large) {
+            padding-top: rem(80);
+            font-size: rem(18);
+        }
+
+        .promotion__title {
+            font-family: var(--font-raleway);
+            padding-bottom: 1rem;
+            font-size: rem(17);
+
+            @include breakpoint(large) {
+                font-size: rem(40);
+                width: 75%;
+                padding-bottom: rem(22);
             }
         }
 
+        .promotion__copy {
+            padding-bottom: 1rem;
+            line-height: 1.5rem;
+
+            @include breakpoint(large) {
+                line-height: rem(30);
+                padding-bottom: rem(20);
+            }
+        }
+
+        .promotion__link {
+            color: var(--cyan);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: rem(0);
+            width: fit-content;
+
+            span {
+                padding-right: 0.5rem;
+            }
+            // EXPERIMENT
+            .icon-wrapper {
+                display: inline-flex;
+                align-items: center;
+            }
+        }
+
+        .promotion__link::after {
+            left: 0;
+            bottom: -2px;
+            height: 1px;
+            position: absolute;
+            width: 100%;
+            content: "";
+            background-color: var(--cyan);
+        }
+
+        // Hover state
+        .promotion__link:hover {
+            color: var(--white);
+
+            .promotion__link-icon {
+                circle {
+                    fill: white;
+                }
+            }
+        }
+        .promotion__link:hover::after {
+            background-color: var(--white);
+        }
     }
-    .promotion__link:hover::after {
-        background-color: var(--white);
-    }
-    
 }

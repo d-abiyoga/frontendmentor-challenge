@@ -1,29 +1,55 @@
-@use '../util/' as *;
+@use "../util/" as *;
 
 .features-wrapper {
     padding: rem(130) 7.5vw rem(85) 7.5vw;
     display: flex;
     flex-direction: column;
     text-align: center;
-    
-    
-    .features__items{
+
+    @include breakpoint(large) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: rem(150);
+        justify-content: center;
+        padding-bottom: rem(70);
+    }
+
+    .features__items {
         padding-bottom: rem(90);
+
+        @include breakpoint(large) {
+            width: 35%;
+            padding-bottom: rem(95);
+        }
 
         .features__icon {
             height: rem(60);
             margin-bottom: 2rem;
+
+            @include breakpoint(large) {
+                height: rem(80);
+            }
         }
-    
+
         .features__title {
             font-size: rem(17);
             margin-bottom: rem(14);
             font-family: var(--font-raleway);
+
+            @include breakpoint(large) {
+                font-size: rem(22);
+                margin-bottom: rem(12);
+            }
         }
-    
+
         .features__detail {
             font-size: rem(14);
             line-height: 1.4rem;
+
+            @include breakpoint(large) {
+                font-size: rem(16);
+                line-height: 1.5rem;
+            }
         }
     }
 }

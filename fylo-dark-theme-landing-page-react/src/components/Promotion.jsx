@@ -11,22 +11,26 @@ const Promotion = () => {
                 src={promotionImage}
                 alt="stay productive"
             />
-            <h2 className="promotion__title">
-                Stay productive, wherever you are
-            </h2>
-            <p className="promotion__copy">
-                Never let location be an issue when accessing your files. Fylo
-                has you covered for all of your file storage needs.
-            </p>
-            <p className="promotion__copy">
-                Securely share files and folders with friends, family and
-                colleagues for live collaboration. No email attachments
-                required.
-            </p>
-            <a className="promotion__link link" href="#">
-                <span>See how Fylo works</span>
-                <ArrowIcon className="promotion__link-icon" />
-            </a>
+            <article className="promotion__article">
+                <h2 className="promotion__title">
+                    Stay productive, wherever you are
+                </h2>
+                <p className="promotion__copy">
+                    Never let location be an issue when accessing your files.
+                    Fylo has you covered for all of your file storage needs.
+                </p>
+                <p className="promotion__copy">
+                    Securely share files and folders with friends, family and
+                    colleagues for live collaboration. No email attachments
+                    required.
+                </p>
+                <a className="promotion__link link" href="#">
+                    <span>See how Fylo works</span>
+                    <div className="icon-wrapper">
+                        <ArrowIcon className="promotion__link-icon" />
+                    </div>
+                </a>
+            </article>
         </section>
     );
 };

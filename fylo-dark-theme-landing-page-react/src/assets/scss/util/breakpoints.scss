@@ -23,3 +23,12 @@ $breakpoints-down: (
         @content;
     }
 }
+
+/* Use Case
+h1 {
+  font-size: rem(30);
+  @include breakdown(large) {
+    font-size: rem(58)
+  }
+}
+*/

@@ -1,28 +1,54 @@
 @use "../util/" as *;
 
 .sign-up-wrapper {
-    padding: 0 7.5vw;
+    padding: 0 5vw;
+    // position: relative;
+
+    @include breakpoint(large) {
+        padding: 0 20vw;
+    }
+
     .sign-up-card {
-        //
         background-color: var(--testimonial-bg);
         border-radius: rem(12);
-        padding: rem(45) rem(30) rem(36);
+        padding: rem(42) rem(24) rem(36);
+        width: 90vw;
         text-align: center;
-
+        position: absolute;
+        transform: translateY(-50%);
+        
+        @include breakpoint(large) {
+            height: rem(300);
+            width: 60vw;
+            padding: rem(45) 8.75% rem(36);
+        }
 
         .sign-up__title {
             font-family: var(--font-raleway);
             font-size: rem(18);
             margin-bottom: rem(24);
+
+            @include breakpoint(large) {
+                font-size: rem(32);
+            }
         }
 
         .sign-up__copy {
             font-size: rem(16);
             margin-bottom: rem(35);
+
+            @include breakpoint(large) {
+                padding: 0 2rem;
+            }
         }
 
         .sign-up__form {
             position: relative;
+
+            @include breakpoint(large) {
+                display: flex;
+                gap: rem(32);
+            }
 
             .sign-up__input {
                 border-radius: rem(25);
@@ -30,13 +56,12 @@
                 height: rem(50);
                 width: 100%;
                 padding-left: rem(30);
-                
+
                 margin-bottom: rem(6);
-                // margin-bottom: rem(6);
             }
 
             .sign-up__input::placeholder {
-                color: hsl(0, 0, 70)
+                color: hsl(0, 0, 70);
             }
 
             .sign-up__input:focus {
@@ -48,10 +73,15 @@
                 color: var(--light-red);
                 text-align: left;
                 padding-left: 1.75rem;
-                // position: absolute;
+                position: absolute;
                 // top: -0.5rem;
                 font-size: rem(12);
                 // left: 0;
+
+                @include breakpoint(large) {
+                    position: absolute;
+                    bottom: rem(-18);
+                }
             }
 
             .sign-up__btn {
@@ -60,6 +90,12 @@
                 border-radius: rem(25);
                 width: 100%;
                 height: rem(50);
+
+                @include breakpoint(large) {
+                    margin-top: 0;
+                    width: 41%;
+                    min-width: rem(180);
+                }
             }
         }
     }

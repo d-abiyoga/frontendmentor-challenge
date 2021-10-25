@@ -1,26 +1,54 @@
-@use '../util' as *;
+@use "../util" as *;
 
 .intro__wrapper {
-    padding-top: rem(45);
+    padding: rem(45) 7.5vw 0;
+    background-color: var(--intro-email-bg);
     color: var(--white);
-    width: 85vw;
     align-self: center;
     text-align: center;
+    background-image: url("../img/bg-curvy-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: left 0 bottom 0;
+
+    @include breakpoint(medium) {
+        padding: rem(55) 25vw rem(130);
+        background-image: url("../img/bg-curvy-desktop.svg");
+        background-repeat: no-repeat;
+        background-position: left 0 bottom 0;
+
+        // padding-bottom: rem(130);
+        width: 100vw;
+    }
 }
 
 .intro__illustration {
     width: 80vw;
+
+    @include breakpoint(large) {
+        width: auto;
+    }
 }
 
 .intro__heading {
     padding-top: rem(22);
     font-family: var(--font-raleway);
     line-height: 2.25rem;
+
+    @include breakpoint(large) {
+        font-size: rem(42);
+        line-height: rem(60);
+    }
 }
 
 .intro__description {
     padding-top: rem(26);
     font-size: rem(15);
+
+    @include breakpoint(large) {
+        padding: rem(30) 7.5% 0;
+        font-size: rem(20);
+        line-height: rem(32);
+    }
 }
 
 .intro__btn {
@@ -29,4 +57,9 @@
     height: rem(48);
     border-radius: rem(22);
     border: none;
-} 
+
+    @include breakpoint(large) {
+        width: rem(280);
+        font-size: rem(16);
+    }
+}

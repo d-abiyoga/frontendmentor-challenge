@@ -1,14 +1,37 @@
 @use "../util/" as *;
 
 .sitemap-wrapper {
-    padding: rem(75) 7.5vw rem(42);
+    padding: rem(250) 7.5vw rem(42);
+    background-color: var(--footer-bg);
+
+    @include breakpoint(large) {
+        padding: rem(200) 8.3vw rem(42);
+        display: grid;
+        grid-template-columns: minmax(auto, rem(630)) auto rem(120);
+        grid-template-rows: repeat(2, auto);
+        column-gap: 3rem;
+        justify-content: space-between;
+    }
 
     .sitemap__company-logo {
         padding: 0 rem(16) rem(45);
+
+        @include breakpoint(large) {
+            padding: 0 0 rem(35);
+            grid-column: 1 / 4;
+        }
     }
 
     .contact-info {
         padding-bottom: rem(65);
+
+        @include breakpoint(large) {
+            display: grid;
+            grid-template-columns: minmax(auto, rem(368)) auto;
+            grid-template-rows: 1fr 2fr;
+            justify-content: space-between;
+            column-gap: 1.5rem;
+        }
 
         .contact-info__item {
             list-style: none;
@@ -19,13 +42,14 @@
             .contact__item-icon-wrapper {
                 // width of zero and wrapper is used to keep consistent gap in contact items, since location icon width is narrower than the other two
                 width: 0;
-
-                // .contact__item-icon {
-                // width: 24px;
-                // height: 24px;
-                // }
             }
-            .contact__detail {
+        }
+
+        .contact-info__item:nth-of-type(1) {
+            @include breakpoint(large) {
+                grid-row: 1 / 3;
+                max-width: rem(368);
+                height: rem(100);
             }
         }
     }
@@ -35,6 +59,14 @@
         padding-bottom: rem(60);
         color: white;
 
+        @include breakpoint(large) {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(rem(82), auto));
+            grid-template-rows: repeat(4, rem(38));
+            grid-auto-flow: column;
+            column-gap: rem(18);
+        }
+
         .links__item {
             padding-bottom: rem(20);
 
@@ -42,7 +74,7 @@
                 color: var(--white);
             }
             .link:active {
-                color: var(--white)
+                color: var(--white);
             }
         }
 
@@ -67,6 +99,11 @@
             align-items: center;
 
             color: var(--white);
+
+            @include breakpoint(large) {
+                height: rem(32);
+                width: rem(32);
+            }
         }
 
         .social-media-icon__link > * {

@@ -6,10 +6,19 @@
     justify-content: space-between;
 
     padding: rem(24) rem(25) 0 rem(20);
+    
+    @include breakpoint(large) {
+        padding: rem(75) rem(80) rem(20); 
+    }
 
     .navbar__logo {
         width: rem(82);
         height: rem(25);
+
+        @include breakpoint(large) {
+            width: auto;
+            height: auto;
+        }
     }
 
     .navbar__items {
@@ -20,6 +29,10 @@
         margin: 0;
         padding-bottom: 0.5rem;
         list-style: none;
+
+        @include breakpoint(large) {
+            gap: rem(60);
+        }
     }
 
     .navbar__link {
