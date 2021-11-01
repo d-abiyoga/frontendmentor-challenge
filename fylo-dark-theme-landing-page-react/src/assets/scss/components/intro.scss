@@ -9,6 +9,7 @@
     background-image: url("../img/bg-curvy-mobile.svg");
     background-repeat: no-repeat;
     background-position: left 0 bottom 0;
+    background-size: contain;
 
     @include breakpoint(medium) {
         padding: rem(55) 25vw rem(130);

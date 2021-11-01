@@ -1,6 +1,5 @@
 import React from "react";
 import promotionImage from "../assets/img/illustration-stay-productive.png";
-import iconArrow from "../assets/img/icon-arrow.svg";
 import ArrowIcon from "../assets/img/icon-arrow.svg?component";
 
 const Promotion = () => {

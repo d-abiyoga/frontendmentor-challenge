@@ -5,10 +5,8 @@ import iconPhone from "../assets/img/icon-phone.svg";
 import iconEmail from "../assets/img/icon-email.svg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fab } from "@fortawesome/free-brands-svg-icons";
+import { faTwitter, faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
-library.add(fab);
 
 const Sitemap = () => {
     return (
@@ -91,7 +89,7 @@ const Sitemap = () => {
                     rel="noopener"
                 >
                     <FontAwesomeIcon
-                        icon={["fab", "facebook-f"]}
+                        icon={faFacebookF}
                         id="link-facebook"
                         alt="facebook"
                         rel="noopener"
@@ -103,7 +101,7 @@ const Sitemap = () => {
                     className="social-media-icon__link link"
                 >
                     <FontAwesomeIcon
-                        icon={["fab", "twitter"]}
+                        icon={faTwitter}
                         id="link-twitter"
                         alt="twitter"
                         rel="noopener"
@@ -115,7 +113,7 @@ const Sitemap = () => {
                     className="social-media-icon__link link"
                 >
                     <FontAwesomeIcon
-                        icon={["fab", "instagram"]}
+                        icon={faInstagram}
                         id="link-instagram"
                         alt="instagram"
                     />
