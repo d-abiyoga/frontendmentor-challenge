@@ -1,0 +1,17 @@
+@use 'globals';
+@use 'components';
+
+
+main {
+    // background-color: grey;    
+}
+
+body {
+  font-family: var(--font-kumbh-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// form {
+//     padding: 0 1.5rem;
+// }

@@ -1,0 +1,22 @@
+@use "../util/" as *;
+
+.navbar {
+    display: flex;
+    height: rem(70);
+    padding: rem(16) rem(24);
+    align-items: center;
+    justify-content: space-between;
+
+    * {
+        height: 70%;
+    }
+    .navbar__menu {
+        display: flex;
+        list-style: none;
+    }
+}
+
+.MenuToggler {
+    z-index: 5;
+    width: rem(20);
+}

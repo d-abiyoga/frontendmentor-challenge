@@ -1,0 +1,53 @@
+.carousel{
+    height: 80vw;
+    width: 100vw;
+    position: relative;
+    // overflow: hidden;
+    
+    .carousel__slides-wrapper {
+        display: flex;
+        flex-wrap: nowrap; 
+        flex-direction: row;
+        transform: translateX(-100vw);
+        
+    }
+    .carousel__image-wrapper {
+        width: 100vw;
+        height: 80vw;
+        
+        .carousel__product-image {
+            width: inherit;
+            height: inherit;
+            object-fit: cover;
+        }
+    }
+
+    .carousel__btn {
+        position: absolute;
+        border-radius: 50%;
+        border: none;
+        height: 2rem;
+        width: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 50%;
+
+        img {
+            height: 40%;
+            width: 40%;
+            // padding: 0.5rem;
+        }
+    }
+
+    .carousel__btn--previous {
+        left: 1rem;
+    }
+    
+    .carousel__btn--next {
+        right: 1rem;
+    }
+
+    
+
+}
