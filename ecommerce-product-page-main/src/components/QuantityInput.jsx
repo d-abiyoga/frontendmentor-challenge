@@ -10,12 +10,12 @@ const QuantityInput = (props) => {
     const handleClick = (e) => {
         e.preventDefault();
         const target = e.currentTarget;
-        if(target.className == "btn__increase") {
-            if(quantity == "") setQuantity(1)
-            else setQuantity((prevQuantity) => prevQuantity + 1)
+        if (target.className == "btn__increase") {
+            if (quantity == "") setQuantity(1);
+            else setQuantity((prevQuantity) => prevQuantity + 1);
         }
-        if(target.className == "btn__decrease") {
-            if (quantity !== 0) setQuantity((prevQuantity) => prevQuantity - 1)
+        if (target.className == "btn__decrease") {
+            if (quantity !== 0) setQuantity((prevQuantity) => prevQuantity - 1);
         }
     };
 
@@ -38,8 +38,9 @@ const QuantityInput = (props) => {
                 </button>
             </div>
             <Button className="btn__submit-quantity">
-                {/* <img className="btn__icon"src={cartIcon} alt="" /> */}
-                <CartIcon className="btn__icon" />
+                <div className="btn__icon-wrapper">
+                    <CartIcon className="btn__icon" viewBox="0 0 24 24"/>
+                </div>
                 Add to cart
             </Button>
         </form>

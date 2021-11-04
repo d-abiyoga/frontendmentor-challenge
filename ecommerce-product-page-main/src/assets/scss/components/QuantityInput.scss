@@ -15,6 +15,8 @@ form {
             background-color: transparent;
             border-radius: 8px;
             width: 80%;
+            font-weight: 700;
+            font-size: 14px;
 
             border: none;
         }
@@ -31,9 +33,18 @@ form {
     .btn__submit-quantity {
         margin-top: 1rem;
         width: 100%;
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
 
-        .btn__icon path {
-            fill: var(--white);
+        .btn__icon-wrapper {
+            height: 18px;
+            width: 18px;
+            .btn__icon path {
+                fill: var(--white);
+            }
         }
     }
 }
@@ -48,4 +59,12 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
     -moz-appearance: textfield;
+}
+
+.iconcart {
+    fill: white;
+    color: white;
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
 }

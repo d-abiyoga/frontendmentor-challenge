@@ -1,64 +1,70 @@
 import { React, useState } from "react";
-import productImage1 from "../assets/img/image-product-1.jpg";
-import productImage2 from "../assets/img/image-product-2.jpg";
-import productImage3 from "../assets/img/image-product-3.jpg";
-import productImage4 from "../assets/img/image-product-4.jpg";
-import nextIcon from "../assets/img/icon-next.svg?components";
-import previousIcon from "../assets/img/icon-previous.svg?components";
+import { useSwipeable } from "react-swipeable";
+import CarouselBtn from "./CarouselBtn";
 
-const Carousel = (props) => {
-    const [animate, setAnimate] = useState(0);
-    const handleClick = (e) => {
-        console.log(e.target);
-        setAnimate(1);
+const Carousel = ({sliderData, showDotIndex}) => {
+    // slideIndex set as 1-indexed
+    const [slideIndex, setSlideIndex] = useState(1);
+    const slides = sliderData;
 
-        // setInterval(setAnimate(0), 1000)
+    const nextSlide = () => {
+        setSlideIndex(slideIndex === slides.length ? 1 : slideIndex + 1);
     };
 
+    const prevSlide = () => {
+        setSlideIndex(slideIndex !== 1 ? slideIndex - 1 : slides.length);
+    };
+
+    const moveDot = (index) => {
+        setSlideIndex(index);
+    };
+
+    const swipeHandler = useSwipeable ({
+        onSwipedRight: () => prevSlide(),
+        onSwipedLeft: () => nextSlide()
+    })
+
     return (
-        <div className={"carousel " + props.className}>
+        <div className={"carousel__wrapper"}>
             <div className="carousel__slides-wrapper">
-                <div className="carousel__image-wrapper">
-                    <img
-                        className="carousel__product-image"
-                        src={productImage1}
-                        alt=""
-                    />
-                </div>
-                <div className="carousel__image-wrapper">
-                    <img
-                        className="carousel__product-image"
-                        src={productImage2}
-                        alt=""
-                    />
-                </div>
-                <div className="carousel__image-wrapper">
-                    <img
-                        className="carousel__product-image"
-                        src={productImage3}
-                        alt=""
-                    />
-                </div>
-                <div className="carousel__image-wrapper">
-                    <img
-                        className="carousel__product-image"
-                        src={productImage4}
-                        alt=""
-                    />
-                </div>
+                {slides.map((obj, index) => {
+                    return (
+                        <div
+                            key={obj.id}
+                            className={
+                                slideIndex === index + 1
+                                    ? "carousel__image-wrapper slide active-anim"
+                                    : "carousel__image-wrapper slide"
+                            }
+                        >
+                            <img
+                                {...swipeHandler}
+                                className="carousel__product-image"
+                                src={new URL(obj.imgUrl, import.meta.url).href}
+                                alt={obj.alt}
+                            />
+                        </div>
+                    );
+                })}
             </div>
-            <button
-                className="carousel__btn carousel__btn--next"
-                onClick={handleClick}
-            >
-                <img src={nextIcon} alt="next image" />
-            </button>
-            <button
-                className="carousel__btn carousel__btn--previous"
-                onClick={handleClick}
-            >
-                <img src={previousIcon} alt="previous image" />
-            </button>
+            <CarouselBtn direction="prev" moveSlide={prevSlide} />
+            <CarouselBtn direction="next" moveSlide={nextSlide} />
+            {showDotIndex && (
+                <div className="container-dots">
+                    {Array.from({ length: slides.length }).map(
+                        (item, index) => (
+                            <div
+                                onClick={() => moveDot(index + 1)}
+                                className={
+                                    slideIndex === index + 1
+                                        ? "dot active"
+                                        : "dot"
+                                }
+                            ></div>
+                        )
+                    )}
+                </div>
+            )}
         </div>
     );
 };

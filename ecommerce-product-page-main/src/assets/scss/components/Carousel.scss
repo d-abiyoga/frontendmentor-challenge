@@ -1,20 +1,21 @@
-.carousel{
+@use '../util/' as *;
+
+.carousel__wrapper {
     height: 80vw;
     width: 100vw;
     position: relative;
     // overflow: hidden;
-    
+
     .carousel__slides-wrapper {
         display: flex;
-        flex-wrap: nowrap; 
+        flex-wrap: nowrap;
         flex-direction: row;
-        transform: translateX(-100vw);
-        
+        // transform: translateX(-100vw);
     }
     .carousel__image-wrapper {
         width: 100vw;
         height: 80vw;
-        
+
         .carousel__product-image {
             width: inherit;
             height: inherit;
@@ -26,28 +27,65 @@
         position: absolute;
         border-radius: 50%;
         border: none;
-        height: 2rem;
-        width: 2rem;
+        height: rem(42);
+        width: rem(42);
         display: flex;
         justify-content: center;
         align-items: center;
         top: 50%;
+        transform: translateY(-50%);
+
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
 
         img {
-            height: 40%;
-            width: 40%;
-            // padding: 0.5rem;
+            height: 30%;
+            width: 30%;
         }
     }
 
-    .carousel__btn--previous {
+    .carousel__btn--prev {
         left: 1rem;
     }
-    
+
     .carousel__btn--next {
         right: 1rem;
     }
+}
 
-    
+.slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity ease-in-out 0.4s;
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.active-anim {
+    opacity: 1;
+}
 
+.container-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid #f1f1f1;
+    margin: 0 5px;
+    background: #f1f1f1;
+    z-index: 10;
+}
+.dot.active {
+    background: rgb(32, 32, 32);
+    z-index: 10;
 }

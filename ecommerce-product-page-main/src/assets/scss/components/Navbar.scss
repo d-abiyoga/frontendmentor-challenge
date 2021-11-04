@@ -8,11 +8,28 @@
     justify-content: space-between;
 
     * {
-        height: 70%;
+        height: 80%;
     }
+
+    .wrapper-left {
+        display: flex;
+        align-items: center;
+        gap: rem(16);
+    }
+    .wrapper-right {
+        display: flex;
+        align-items: center;
+        gap: rem(20);
+    }
+
     .navbar__menu {
         display: flex;
         list-style: none;
+    }
+
+    .cartToggler__btn {
+        border: none;
+        background-color: inherit;
     }
 }
 
