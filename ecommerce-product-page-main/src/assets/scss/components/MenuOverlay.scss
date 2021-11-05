@@ -1,0 +1,70 @@
+@use '../util/' as *;
+
+.MenuOverlay__wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 2;
+    width: 0;
+    height: 100vh;
+    
+    transition: opacity ease-in-out 1s;
+
+    &--toggled {
+        width: 66vw;
+    }
+
+
+    .btn__close {
+        background-color: var(--white);
+        border: none;
+
+        height: rem(50);
+        width: rem(50);
+        // padding: 1rem;
+        margin: rem(10) 0.5rem;
+
+        img{
+            height: rem(20);
+            width: rem(20);
+        }
+    }
+
+    ul {
+        margin-top: calc(rem(80) - 0.5rem);
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        padding-left: calc(rem(24) - 0.5rem);
+        li {
+            width: 100%;
+        }
+        a {
+            display: block;
+            color: black;
+            font-weight: 700;
+            padding: 0.5rem;
+            width: 100%;
+        }
+    }
+}
+
+.MenuOverlay__outside {
+    position: absolute;
+    z-index: 1;
+    // left:66vw;
+    // width: 34vw; 
+    left: 0;
+    width: 0;
+    height: 100vh;
+    background-color: var(--black-75);
+    
+    &--toggled{
+        left: 66vw;
+        width: 34vw;
+    }
+}

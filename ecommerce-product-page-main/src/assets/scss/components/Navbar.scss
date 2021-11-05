@@ -1,0 +1,55 @@
+@use "../util/" as *;
+
+.navbar {
+    display: flex;
+    height: rem(70);
+    padding: rem(16) rem(24);
+    align-items: center;
+    justify-content: space-between;
+
+    * {
+        height: 80%;
+    }
+
+    .wrapper-left {
+        display: flex;
+        align-items: center;
+        gap: rem(16);
+    }
+    .wrapper-right {
+        display: flex;
+        align-items: center;
+        gap: rem(20);
+    }
+
+    .navbar__menu {
+        display: flex;
+        list-style: none;
+    }
+
+    .cartToggler__btn {
+        border: none;
+        background-color: inherit;
+        position: relative;
+         .cartToggler__item-quantity{
+             position:absolute;
+             background-color: var(--orange);
+             width: 14px;
+             height: 14px;
+             font-size: 9px;
+             font-weight: 700;
+             top: 0;
+             right: 0;
+             color: var(--white);
+             padding: 2px;
+             border-radius: 50%;
+             transform: translate(50%, -50%);
+             z-index: 1;
+         }
+    }
+}
+
+.MenuToggler {
+    z-index: 5;
+    width: rem(20);
+}
