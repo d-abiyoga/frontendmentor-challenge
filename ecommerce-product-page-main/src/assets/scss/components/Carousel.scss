@@ -4,13 +4,11 @@
     height: 80vw;
     width: 100vw;
     position: relative;
-    // overflow: hidden;
 
     .carousel__slides-wrapper {
         display: flex;
         flex-wrap: nowrap;
         flex-direction: row;
-        // transform: translateX(-100vw);
     }
     .carousel__image-wrapper {
         width: 100vw;

@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
 
 const ProductData = {
+    id: uuidv4(),
     name: "Fall Limited Edition Sneakers",
     seller: "Sneaker Company",
     details:
