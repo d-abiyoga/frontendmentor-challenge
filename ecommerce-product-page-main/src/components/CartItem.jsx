@@ -34,7 +34,8 @@ const CartItem = ({
                 </span>
             </p>
             <button className="CartItem__delete" onClick={() => onDelete(uid)}>
-                <DeleteIcon />
+                <span className="sr-only">Remove item from Cart</span>
+                <DeleteIcon aria-hidden="true"/>
             </button>
         </div>
     );

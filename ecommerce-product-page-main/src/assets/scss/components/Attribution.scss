@@ -1,9 +1,12 @@
 .attribution {
+    display: absolute;
+    bottom: 1rem;
+    left: 50%;
     font-size: 11px;
     text-align: center;
     padding-bottom: 1rem;
 }
 .attribution a {
-    color: hsl(228, 45%, 44%);
-    color: var(--cyan);
+    color: var(--orange);
+    font-weight: 700;
 }

@@ -5,12 +5,12 @@ import CloseIcon from '../assets/img/icon-close.svg'
 
 const MenuToggler = (props) => {
     return (
-        <div className="MenuToggler" onClick={props.onToggle}>
+        <button aria-label="menu-toggle" className="menu-toggler" onClick={props.onToggle}>
             {props.isMenuToggled ? 
-            <img src={CloseIcon} alt="Click to close menu" /> :
-            <img src={HamMenuIcon} alt="Click to expand" /> 
+            <img src={CloseIcon} alt="Click to close menu" aria-hidden="true"/> :
+            <img src={HamMenuIcon} alt="Click to expand" aria-hidden="true"/> 
 }
-        </div>
+        </button>
     )
 }
 

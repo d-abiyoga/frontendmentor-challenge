@@ -1,6 +1,7 @@
 @use '../util/' as *;
 
 .carousel__wrapper {
+    // min-height: rem(300);
     height: 80vw;
     width: 100vw;
     position: relative;
@@ -19,34 +20,6 @@
             height: inherit;
             object-fit: cover;
         }
-    }
-
-    .carousel__btn {
-        position: absolute;
-        border-radius: 50%;
-        border: none;
-        height: rem(42);
-        width: rem(42);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        top: 50%;
-        transform: translateY(-50%);
-
-        box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
-
-        img {
-            height: 30%;
-            width: 30%;
-        }
-    }
-
-    .carousel__btn--prev {
-        left: 1rem;
-    }
-
-    .carousel__btn--next {
-        right: 1rem;
     }
 }
 

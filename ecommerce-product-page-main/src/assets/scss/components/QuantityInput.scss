@@ -1,24 +1,40 @@
+@use '../util/' as *;
+
 form {
     margin: 0 24px;
+    @include breakpoint(large) {
+        display: flex;
+        align-items: center;
+        align-self: start;
+        gap: 1rem;
+    }
 
     .input-wrapper {
-        width: 100%;
-        height: 3rem;
-        padding: 0.5rem;
         background-color: var(--light-grayish-blue);
         border-radius: 8px;
+        height: 3rem;
+        width: 100%;
+        padding: 0.5rem;
         display: inline-flex;
         justify-content: space-between;
         align-items: center;
+        @include breakpoint(large) {
+            height: rem(54);
+            min-width: rem(100);
+            width: 40%;
+        }
         .input {
-            text-align: center;
             background-color: transparent;
+            border: none;
             border-radius: 8px;
-            width: 80%;
             font-weight: 700;
             font-size: 14px;
+            text-align: center;
+            width: 80%;
 
-            border: none;
+            // @include breakpoint(large) {
+            //     height: rem(54);
+            // }
         }
         .btn__increase,
         .btn__decrease {
@@ -27,10 +43,11 @@ form {
             display: flex;
             align-items: center;
             padding: 0.5rem;
+            cursor: pointer;
         }
     }
 
-    .btn__submit-quantity {
+    .btn__add-to-cart {
         margin-top: 1rem;
         width: 100%;
         font-size: 14px;
@@ -38,6 +55,14 @@ form {
         justify-content: center;
         align-items: center;
         gap: 1rem;
+        box-shadow: var(--orange) 0px 10px 35px -10px;
+
+        @include breakpoint(large) {
+            margin-top: 0;
+            width: 60%;
+            min-width: rem(150);
+        }
+
 
         .btn__icon-wrapper {
             height: 18px;
