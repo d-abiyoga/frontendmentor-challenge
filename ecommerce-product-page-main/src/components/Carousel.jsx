@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import { useSwipeable } from "react-swipeable";
-import CarouselBtn from "./CarouselBtn";
+import ArrowBtn from "./ArrowBtn";
 
 const Carousel = ({sliderData, showDotIndex}) => {
     // slideIndex set as 1-indexed
@@ -40,15 +40,15 @@ const Carousel = ({sliderData, showDotIndex}) => {
                             <img
                                 {...swipeHandler}
                                 className="carousel__product-image"
-                                src={new URL(obj.imgUrl, import.meta.url).href}
+                                src={obj.imgUrl}
                                 alt={obj.alt}
                             />
                         </div>
                     );
                 })}
             </div>
-            <CarouselBtn direction="prev" moveSlide={prevSlide} />
-            <CarouselBtn direction="next" moveSlide={nextSlide} />
+            <ArrowBtn direction="prev" moveSlide={prevSlide} />
+            <ArrowBtn direction="next" moveSlide={nextSlide} />
             {showDotIndex && (
                 <div className="container-dots">
                     {Array.from({ length: slides.length }).map(

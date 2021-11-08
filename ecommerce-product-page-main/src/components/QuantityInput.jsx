@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import React from "react";
 import minusIcon from "../assets/img/icon-minus.svg?components";
 import plusIcon from "../assets/img/icon-plus.svg?components";
 import { ReactComponent as CartIcon } from "../assets/img/icon-cart.svg";
@@ -35,7 +35,7 @@ const QuantityInput = ({
                     <img src={plusIcon} alt="increase quantity" />
                 </button>
             </div>
-            <Button className="btn__submit-quantity" onClick={handleCartButton}>
+            <Button className="btn__add-to-cart" onClick={handleCartButton}>
                 <div className="btn__icon-wrapper">
                     <CartIcon className="btn__icon" viewBox="0 0 24 24" />
                 </div>

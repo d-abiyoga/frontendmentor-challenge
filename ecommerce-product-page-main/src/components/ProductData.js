@@ -11,25 +11,29 @@ const ProductData = {
             id: uuidv4(),
             title: "Lorem",
             alt: "alt1",
-            imgUrl: "../assets/img/image-product-1.jpg",
+            imgUrl: "/img/image-product-1.jpg",
+            thumbnailUrl: "/img/image-product-1.jpg"
         },
         {
             id: uuidv4(),
             title: "Lorem",
             alt: "alt1",
-            imgUrl: "../assets/img/image-product-2.jpg",
+            imgUrl: "/img/image-product-2.jpg",
+            thumbnailUrl: "/img/image-product-2.jpg"
         },
         {
             id: uuidv4(),
             title: "Lorem",
             alt: "alt1",
-            imgUrl: "../assets/img/image-product-3.jpg",
+           imgUrl: "/img/image-product-3.jpg",
+            thumbnailUrl: "/img/image-product-3.jpg"
         },
         {
             id: uuidv4(),
             title: "Lorem",
             alt: "alt1",
-            imgUrl: "../assets/img/image-product-4.jpg",
+            imgUrl: "/img/image-product-4.jpg",
+            thumbnailUrl: "/img/image-product-4.jpg"
         },
     ],
     price: 250,

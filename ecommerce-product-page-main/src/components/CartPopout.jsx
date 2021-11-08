@@ -1,9 +1,7 @@
-import { React, useState } from "react";
+import React from "react";
 import Button from "./Button";
 import CartItem from "./CartItem";
 import { v4 as uuidv4 } from "uuid";
-
-// TODO: implement import of each product picture into a state
 
 const CartPopout = ({ cartItems, onDelete }) => {
     const getFinalPrice = (price, quantity) => {
@@ -23,7 +21,7 @@ const CartPopout = ({ cartItems, onDelete }) => {
                         <ul>
                             {cartItems.map((item) => (
                                 <CartItem
-                                    // key={uuidv4}
+                                    key={uuidv4()}
                                     uid={item.uid}
                                     name={item.productName}
                                     price={item.currentPrice}

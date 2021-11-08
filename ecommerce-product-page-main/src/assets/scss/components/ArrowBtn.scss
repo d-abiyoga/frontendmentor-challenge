@@ -1,0 +1,33 @@
+@use '../util/' as *;
+
+.btn__arrow {
+    position: absolute;
+    border-radius: 50%;
+    border: none;
+    height: rem(42);
+    width: rem(42);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+
+}
+
+.btn__arrow:hover,
+.btn__arrow:focus {
+    svg path{
+        stroke : var(--orange);
+    }
+}
+
+.btn__arrow--prev {
+    left: 1rem;
+}
+
+.btn__arrow--next {
+    right: 1rem;
+}

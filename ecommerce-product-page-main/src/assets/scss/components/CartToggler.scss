@@ -1,0 +1,27 @@
+.cartToggler__btn {
+    border: none;
+    background-color: inherit;
+    position: relative;
+    cursor: pointer;
+
+    .cartToggler__item-quantity {
+        // Positions
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(50%, -50%);
+        z-index: 1;
+        
+        // Size
+        height: 14px;
+        width: 18px;
+        border-radius: 50%;
+        padding: 2px;
+        
+        // Font and colors
+        background-color: var(--orange);
+        color: var(--white);
+        font-size: 9px;
+        font-weight: 700;
+    }
+}

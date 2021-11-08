@@ -7,49 +7,78 @@
     align-items: center;
     justify-content: space-between;
 
-    * {
-        height: 80%;
+    @include breakpoint(large) {
+        height: rem(110);
+        padding: 0;
     }
 
     .wrapper-left {
         display: flex;
         align-items: center;
         gap: rem(16);
+
+        @include breakpoint(large) {
+            gap: rem(56);
+            height: inherit;
+
+            .navbar__menu {
+                display: flex;
+                gap: rem(34);
+                height: inherit;
+                align-items: center;
+                font-size: rem(14);
+                li {
+                    display: flex;
+                    height: inherit;
+                    align-items: center;
+                    border-bottom: solid 3px transparent;
+
+                    a {
+                        color: var(--very-dark-blue);
+                    }
+                }
+                li:hover {
+                    border-bottom: solid 3px var(--orange);
+                }
+            }
+        }
     }
     .wrapper-right {
         display: flex;
         align-items: center;
         gap: rem(20);
+        @include breakpoint(large) {
+            gap: rem(46);
+        }
+
+        .navbar__avatar {
+            height: rem(24);
+            width: rem(24);
+            border-radius: 50%;
+            border: solid 2px transparent;
+            
+            &:hover,
+            &:focus {
+                border: solid 2px var(--orange);
+            }
+            
+            @include breakpoint(large) {
+                height: rem(50);
+                width: rem(50);
+            }
+        }
     }
 
     .navbar__menu {
         display: flex;
         list-style: none;
     }
-
-    .cartToggler__btn {
-        border: none;
-        background-color: inherit;
-        position: relative;
-         .cartToggler__item-quantity{
-             position:absolute;
-             background-color: var(--orange);
-             width: 14px;
-             height: 14px;
-             font-size: 9px;
-             font-weight: 700;
-             top: 0;
-             right: 0;
-             color: var(--white);
-             padding: 2px;
-             border-radius: 50%;
-             transform: translate(50%, -50%);
-             z-index: 1;
-         }
-    }
 }
 
-.MenuToggler {
-    z-index: 5;
+.menu-toggler {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
     width: rem(20);
+    z-index: 5;
 }
