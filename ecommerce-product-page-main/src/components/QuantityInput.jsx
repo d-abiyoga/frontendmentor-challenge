@@ -36,7 +36,7 @@ const QuantityInput = ({
                 </button>
             </div>
             <Button className="btn__add-to-cart" onClick={handleCartButton}>
-                <div className="btn__icon-wrapper">
+                <div aria-hidden="true" className="btn__icon-wrapper">
                     <CartIcon className="btn__icon" viewBox="0 0 24 24" />
                 </div>
                 Add to cart

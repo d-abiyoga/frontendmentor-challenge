@@ -1,6 +1,6 @@
 import React from "react";
 import { ReactComponent as DeleteIcon } from "../assets/img/icon-delete.svg";
-import itemPicture from "../assets/img/image-product-2-thumbnail.jpg";
+// import itemPicture from "../assets/img/image-product-2-thumbnail.jpg";
 
 
 const CartItem = ({
@@ -8,6 +8,7 @@ const CartItem = ({
     price: itemPrice,
     quantity: itemQuantity,
     finalPrice: itemFinalPrice,
+    thumbnailUrl,
     onDelete,
     uid
 }) => {
@@ -23,7 +24,7 @@ const CartItem = ({
         <div className="CartItem__wrapper">
             <img
                 className="CartItem__pict"
-                src={itemPicture}
+                src={thumbnailUrl}
                 alt="product thumbnail"
             />
             <p className="CartItem__name">{displayedProductName(itemName)}</p>

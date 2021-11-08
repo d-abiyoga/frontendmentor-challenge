@@ -1,20 +1,20 @@
-import React, { Suspense, useState } from "react";
+import React, { Suspense, useState , useEffect} from "react";
 import Navbar from "./components/Navbar";
-import ProductInfo from "./components/ProductInfo";
-import MenuToggler from "./components/MenuToggler";
 import NavLogo from "./components/NavLogo";
-import avatar from "./assets/img/image-avatar.png";
 import logo from "./assets/img/logo.svg?components";
-import CartToggler from "./components/CartToggler";
-import Attribution from "./components/Attribution";
-import QuantityInput from "./components/QuantityInput";
-import CartPopout from "./components/CartPopout";
-import ProductData from "./components/ProductData";
-import { v4 as uuidv4 } from "uuid";
+import NavMenu from "./components/NavMenu";
+import avatar from "./assets/img/image-avatar.png";
+import MenuToggler from "./components/MenuToggler";
 import SideDrawer from "./components/SideDrawer";
 import Carousel from "./components/Carousel";
+import ProductData from "./components/ProductData";
+import ProductInfo from "./components/ProductInfo";
+import QuantityInput from "./components/QuantityInput";
+import CartToggler from "./components/CartToggler";
+import CartPopout from "./components/CartPopout";
+import Attribution from "./components/Attribution";
+import { v4 as uuidv4 } from "uuid";
 import { useMediaQuery } from "react-responsive";
-import NavMenu from "./components/NavMenu";
 // import Slideshow from "./components/Slideshow";
 
 const Slideshow = React.lazy(() => import("./components/Slideshow"));
@@ -43,7 +43,7 @@ const App = () => {
     const [isMenuToggled, setIsMenuToggled] = useState(false);
     const [isLightboxToggled, setIsLightboxToggled] = useState(false);
     const [cartItems, setCartItems] = useState([]);
-    const [curProductQuantity, setCurProductQuantity] = useState("");
+    const [curProductQuantity, setCurProductQuantity] = useState(0);
 
     const isNotDesktop = useMediaQuery({ query: "(max-width: 1023px)" });
 
@@ -59,10 +59,11 @@ const App = () => {
                     productName: currentProduct.name,
                     currentPrice: currentProduct.currentPrice,
                     quantity: curProductQuantity,
+                    thumbnailUrl: currentProduct.picture[0].thumbnailUrl
                 },
             ]);
-        } else {
-            alert("please enter item quantity");
+        } else if (!curProductQuantity || curProductQuantity == ""){
+            alert("Item quantity cannot be zero");
         }
     };
 
@@ -100,6 +101,13 @@ const App = () => {
     const handleInputChange = (e) => {
         setCurProductQuantity(e.target.value);
     };
+
+    useEffect(() => {
+        if(curProductQuantity < 0) {
+            alert("quantity cannot be below zero");
+            setCurProductQuantity(0);
+        }
+    })
 
     return (
         <>

@@ -1,21 +1,19 @@
 import React from "react";
-// import Carousel from "./Carousel";
 
 const ProductInfo = ({
     seller,
     name,
-    picture,
     details,
     discount,
     currentPrice,
-    normalPrice,
+    normalPrice
 }) => {
     return (
         <div className="Product">
             {/* <Carousel sliderData={picture} showDotIndex={false} /> */}
             <div className="Product__info-wrapper">
                 <p className="Product__seller">{seller.toUpperCase()}</p>
-                <h2 className="Product__name">{name}</h2>
+                <h1 className="Product__name">{name}</h1>
                 <p className="Product__details">{details}</p>
                 <div className="Product__price-wrapper">
                     {discount !== 0 ? (
