@@ -12,32 +12,32 @@ const ProductData = {
             title: "Lorem",
             alt: "alt1",
             imgUrl: "/img/image-product-1.jpg",
-            thumbnailUrl: "/img/image-product-1.jpg"
+            thumbnailUrl: "/img/image-product-1-thumbnail.jpg",
         },
         {
             id: uuidv4(),
             title: "Lorem",
             alt: "alt1",
             imgUrl: "/img/image-product-2.jpg",
-            thumbnailUrl: "/img/image-product-2.jpg"
+            thumbnailUrl: "/img/image-product-2-thumbnail.jpg",
         },
         {
             id: uuidv4(),
             title: "Lorem",
             alt: "alt1",
-           imgUrl: "/img/image-product-3.jpg",
-            thumbnailUrl: "/img/image-product-3.jpg"
+            imgUrl: "/img/image-product-3.jpg",
+            thumbnailUrl: "/img/image-product-3-thumbnail.jpg",
         },
         {
             id: uuidv4(),
             title: "Lorem",
             alt: "alt1",
             imgUrl: "/img/image-product-4.jpg",
-            thumbnailUrl: "/img/image-product-4.jpg"
+            thumbnailUrl: "/img/image-product-4-thumbnail.jpg",
         },
     ],
     price: 250,
-    discount: 50
+    discount: 50,
 };
 
 export default ProductData;

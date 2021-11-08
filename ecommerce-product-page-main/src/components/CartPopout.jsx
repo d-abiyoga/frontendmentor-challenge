@@ -30,7 +30,7 @@ const CartPopout = ({ cartItems, onDelete }) => {
                                         item.currentPrice,
                                         item.quantity
                                     )}
-                                    picture={item.picture}
+                                    thumbnailUrl={item.thumbnailUrl}
                                     onDelete={onDelete}
                                 />
                             ))}
