@@ -5,44 +5,42 @@ import { ReactComponent as CartIcon } from "../assets/img/icon-cart.svg";
 import Button from "./Button";
 
 const QuantityInput = ({
-    quantity,
-    handleQuantityButton,
-    onChange,
-    handleCartButton,
+  quantity,
+  handleQuantityButton,
+  onChange,
+  handleCartButton,
 }) => {
-    return (
-        <form>
-            <div className="input-wrapper">
-                <label style={{ display: "none" }}>Quantity</label>
-                <button
-                    className="btn__decrease"
-                    onClick={handleQuantityButton}
-                >
-                    <img src={minusIcon} alt="decrease quantity" />
-                </button>
-                <input
-                    className="input"
-                    type="number"
-                    placeholder="0"
-                    min="0"
-                    value={quantity}
-                    onChange={onChange}
-                />
-                <button
-                    className="btn__increase"
-                    onClick={handleQuantityButton}
-                >
-                    <img src={plusIcon} alt="increase quantity" />
-                </button>
-            </div>
-            <Button className="btn__add-to-cart" onClick={handleCartButton}>
-                <div aria-hidden="true" className="btn__icon-wrapper">
-                    <CartIcon className="btn__icon" viewBox="0 0 24 24" />
-                </div>
-                Add to cart
-            </Button>
-        </form>
-    );
+  return (
+    <form>
+      <div className="input-wrapper">
+        <label style={{ display: "none" }}>Quantity</label>
+        <button
+          className="btn__decrease"
+          onClick={handleQuantityButton}
+        >
+          <img src={minusIcon} alt="decrease quantity" />
+        </button>
+        <input
+          className="input"
+          type="number"
+          placeholder="0"
+          min="0"
+          value={quantity}
+          onChange={onChange}
+        />
+        <button
+          className="btn__increase"
+          onClick={handleQuantityButton}
+        >
+          <img src={plusIcon} alt="increase quantity" />
+        </button>
+      </div>
+      <Button className="btn__add-to-cart" onClick={handleCartButton}>
+        <CartIcon aria-hidden="true" className="btn__icon" viewBox="0 0 24 24" />
+        <span>Add to cart</span>
+      </Button>
+    </form>
+  );
 };
 
 export default QuantityInput;
