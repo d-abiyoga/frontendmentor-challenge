@@ -27,18 +27,22 @@
                 height: inherit;
                 align-items: center;
                 font-size: rem(14);
-                li {
+                .navbar__link {
                     display: flex;
                     height: inherit;
                     align-items: center;
                     border-bottom: solid 3px transparent;
 
                     a {
-                        color: var(--very-dark-blue);
+                        color: var(--grayish-blue);
+                        font-size: rem(15);
                     }
                 }
-                li:hover {
+                .navbar__link:hover {
                     border-bottom: solid 3px var(--orange);
+                    a {
+                        color: var(--dark-grayish-blue);
+                    }
                 }
             }
         }

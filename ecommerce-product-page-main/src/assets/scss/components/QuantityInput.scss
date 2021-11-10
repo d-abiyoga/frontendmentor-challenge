@@ -54,7 +54,7 @@ form {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 1rem;
+        gap: rem(14);
         box-shadow: var(--orange) 0px 10px 35px -10px;
 
         @include breakpoint(large) {
@@ -63,14 +63,14 @@ form {
             min-width: rem(150);
         }
 
-
-        .btn__icon-wrapper {
-            height: 18px;
-            width: 18px;
-            .btn__icon path {
-                fill: var(--white);
-            }
+        .btn__icon path {   
+          fill: var(--white);
         }
+
+        /* .btn__icon-wrapper { */
+        /*     height: 18px; */
+        /*     width: 18px; */
+        /* } */
     }
 }
 
