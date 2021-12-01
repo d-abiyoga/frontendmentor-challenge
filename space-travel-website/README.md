@@ -27,12 +27,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Mobile version](./screenshot/mobile.png)
+![Desktop version](./screenshot/desktop.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [solution URL](https://www.frontendmentor.io/solutions/space-tourism-web-with-vanillajs-css-grid-6Xbfj4-O7)
+- Live Site URL: [Live Site on netlify](https://space-travel-web-d-abiyoga.netlify.app/)
 
 ## My process
 
@@ -65,7 +66,7 @@ The site may be able to improved further by separating the tab contents into sep
 
 ### Useful resources
 
-- [Scrimba Lesson - Space Travel](https://scrimba.com/learn/spacetravel) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
+- [Scrimba Lesson - Space Travel](https://scrimba.com/learn/spacetravel) 
 
 ## Author
 
